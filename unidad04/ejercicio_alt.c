@@ -25,12 +25,12 @@ int main(void)
 	Aparicion aparicion = no_encontrada;
 
 	printf("Introduce el texto: ");
-	FFLUSH(stdin);
+//	FFLUSH(stdin);
 	fgets(texto, TAM_TEXT_MAX, stdin);
 	longitudTexto = strlen(texto);
 
 	printf("Introduce la letra: ");
-	FFLUSH(stdin);
+//	FFLUSH(stdin);
 	scanf("%c", &letra);
 
 	for (Ushort i = 0; i < longitudTexto; ++i)
@@ -52,16 +52,24 @@ int main(void)
 					break;
 			}
 		}
-		else if (aparicion != no_encontrada)
+		else 
 		{
-			if (aparicion == mas_veces)
-				++gruposConsecutivas;
-			aparicion = no_encontrada;
+			switch (aparicion)
+			{
+				case mas_veces:
+					++gruposConsecutivas;
+				case primera_vez:
+					aparicion = no_encontrada;
+					break;
+			}
 		}
 	}
 
-	printf("Los datos de la letra %c en el texto son:\n"
-				 "Repeticiones: %hu"
-				 "Consecutivas en total: %hu"
-				 "Grupos de consecutivas: %hu", letra, repeticiones, consecutivas, gruposConsecutivas);
+	printf("Los datos de la letra «%c» en el texto son:\n"
+				 "%-.5s %5hu\n"
+				 "%-.5s %5hu\n"
+				 "%-.5s %5hu\n", letra,
+				 "Repeticiones:", repeticiones, 
+				 "Consecutivas en total:", consecutivas, 
+				 "Grupos de consecutivas:", gruposConsecutivas);
 }
