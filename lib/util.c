@@ -32,17 +32,17 @@ int fflushin(int fd)
 	
 		switch (retselect)
 		{
-			case 1:
-				read(fd, &byte, 1);
-				readfds = savefds;
-				timeout = savetime;
-				break;
 			case 0:
 				retorno = 0;
 				break;
 			case -1:
 				perror("Error en función select");
 				retorno = -1;
+				break;
+			default:
+				read(fd, &byte, 1);
+				readfds = savefds;
+				timeout = savetime;
 				break;
 		}
 	} while (retorno == 1);
