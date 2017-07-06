@@ -12,9 +12,15 @@
 int main(void)
 {
 	int dato, p;
+	char * nombreFile = "dato.dat";
 	FILE *file;
 	
-	file = fopen("dato.dat", "r");
+	file = fopen(nombreFile, "r");
+	if (file == NULL)
+	{
+		fprintf(stderr, "No existe el archivo %s\n", nombreFile);
+		return -1;
+	}
 
 	while (!feof(file))
 	{
