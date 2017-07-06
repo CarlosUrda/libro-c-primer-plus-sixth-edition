@@ -17,7 +17,7 @@
 #define UT_ERR_COMPROBAR_BUFER_BAJO		-4
 #define UT_ERR_LIMPIAR_BUFFER_STDIN		-5
 
-/* Herramientas */
+/* Herramientas para sobrecarga de funciones */
 #define PRIMER_ARG(_1, ...)				_1
 #define RESTO_ARGS(_1, ...)				__VA_ARGS__
 

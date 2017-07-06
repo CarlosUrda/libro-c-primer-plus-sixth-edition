@@ -32,6 +32,7 @@ char * getstdin(char * cadena, int numMax)
 	char caracter;
 	int i;
 
+	// Leer la cadena desde stdin
 	for (i = 0; i < numMax-1; ++i)
 	{
 		caracter = getchar();
