@@ -14,10 +14,10 @@
 * Argumentos:
 * 	char * cadena: lugar donde guardar la cadena leída.
 * 	int numMax: valor para determinar el número máximo de caracteres a leer 
-*			desde la entrada. El número máximo de caracteres a ser leídos es numMax-1.
+* 		desde la entrada. El número máximo de caracteres a ser leídos es numMax-1.
 *
 * Retorno:
-*		Devuelve char * con la dirección donde se guarda la cadena leída si no hay 
+* 	Devuelve char * con la dirección donde se guarda la cadena leída si no hay 
 * 		error. Al final de la cadena leída añade un carácter fin de cadena '\0'.
 * 	Null si hay error (en tal caso el contenido de cadena es inconsistente). 
 */
@@ -79,11 +79,11 @@ char * getstdin(char * cadena, int numMax)
 /*
 * Limpiar el búfer de entrada a bajo nivel de un flujo de entrada.
 *
-*	Argumentos:
-*		int fd: Descriptor de fichero a limpiar su búfer.
+* Argumentos:
+* 	int fd: Descriptor de fichero a limpiar su búfer.
 *
 * Retorno:
-*		UT_OK si el búfer es limpiado correctamente.
+* 	UT_OK si el búfer es limpiado correctamente.
 * 	UT_ERR si hay algún error. En utilErr queda grabado el código de error.
 */
 int fflushin(int fd)

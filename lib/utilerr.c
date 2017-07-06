@@ -1,5 +1,5 @@
 /*
-*	Módulo para tratar los errores generados en la librería util.c
+* Módulo para tratar los errores generados en la librería util.c
 */
 
 #include <stdio.h>
@@ -74,7 +74,7 @@ char * strUtilErr_void(void)
 * error.  
 * 
 * Argumentos:
-*		int numErr: número del error a imprimir su mensaje asociado.
+* 	int numErr: número del error a imprimir su mensaje asociado.
 *
 * Retorno:
 * 	Ninguno.
@@ -90,7 +90,7 @@ void printUtilErr_int(int numErr)
 * error. Al mensaje de salida puede añadirse un mensaje personalizado.
 * 
 * Argumentos:
-*		int numErr: número del error a imprimir su mensaje asociado.
+* 	int numErr: número del error a imprimir su mensaje asociado.
 * 	char * mensaje: mensaje opcional a imprimir antes del mensaje de error.
 *
 * Retorno:
@@ -127,7 +127,8 @@ void printUtilErr_pchar(char * mensaje)
 * Argumentos:
 * 	int numErr: número de error a fijar. 
 *
-* Ninguno.
+* Retorno:
+* 	Ninguno.
 */
 void setUtilErr(int numErr)
 {
@@ -156,7 +157,8 @@ int getUtilErr(void)
 * Argumentos:
 * 	Ninguno.	
 *
-* Ninguno.
+* Retorno:
+* 	Ninguno.
 */
 void limpiarUtilErr(void)
 {

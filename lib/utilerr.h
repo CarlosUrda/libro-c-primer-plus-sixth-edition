@@ -25,18 +25,18 @@
 /* Funciones del módulo */
 char * strUtilErr_int(int);
 char * strUtilErr_void(void);
-#define strUtilErr(_1)															\
-	_Generic(((int)_1+0.0),	double: strUtilErr_int,		\
+#define strUtilErr(_1)														\
+	_Generic(((int)_1+0.0),	double: strUtilErr_int,	\
 													int: strUtilErr_void)(_1)
 void printUtilErr_pchar(char *);
 void printUtilErr_int_pchar(int, char *);
 void printUtilErr_int(int);
-#define printUtilErr(...)																			\
-	_Generic(																										\
-		(PRIMER_ARG(__VA_ARGS__)),																\
-		char *:	printUtilErr_pchar,																\
-		int: _Generic((PRIMER_ARG(RESTO_ARGS(__VA_ARGS__))+0),			\
-									int: printUtilErr_int,											\
+#define printUtilErr(...)																		\
+	_Generic(																									\
+		(PRIMER_ARG(__VA_ARGS__)),															\
+		char *:	printUtilErr_pchar,															\
+		int: _Generic((PRIMER_ARG(RESTO_ARGS(__VA_ARGS__))+0),	\
+									int: printUtilErr_int,										\
 									char *: printUtilErr_int_pchar))(__VA_ARGS__)
 void setUtilErr(int);
 int getUtilErr(void);
