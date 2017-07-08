@@ -13,44 +13,43 @@ static int utilErr = UT_OK;
 * Obtener un mensaje de error asociado a un código de error.
 * 
 * Argumentos:
-* 	int numErr: código de error a obtener su mensaje de error.
+*   int numErr: código de error a obtener su mensaje de error.
 *
 * Retorno:
-* 	Cadena char * con el mensaje de error.
+*   Cadena char * con el mensaje de error.
 *
 * Mejoras:
-* 	Comprobar si no da warning quitar los break.
+*   Comprobar si no da warning quitar los break.
 */
 char * strUtilErr_int(int numErr)
 {
-	switch (numErr)
-	{
-		case UT_OK:
-			return UT_PREMENSAJE_ERR "Todo correcto.";
-			break;
-		case UT_ERR:
-			return UT_PREMENSAJE_ERR "Error genérico.";
-			break;
-		case UT_ERR_LECTURA_STDIN:
-			return UT_PREMENSAJE_ERR "Error en la lectura de datos desde stdin.";
-			break;
-		case UT_ERR_ARGS:
-			return UT_PREMENSAJE_ERR "Error en los argumentos.";
-			break;
-		case UT_ERR_COMPROBAR_BUFER_BAJO:
-			return UT_PREMENSAJE_ERR 
-						 "Error al comprobar si el búfer bajo nivel está vacío";
-			break;
-		case UT_ERR_LIMPIAR_BUFFER_STDIN:
-			return UT_PREMENSAJE_ERR 
-						 "Error al limpiar los caracteres restantes en el búfer stdin.";
-			break;
-		default:
-			return UT_PREMENSAJE_ERR "Error desconocido.";
-			break;
-	}
+    switch (numErr)
+    {
+        case UT_OK:
+            return UT_PREMENSAJE_ERR "Todo correcto.";
+            break;
+        case UT_ERR:
+            return UT_PREMENSAJE_ERR "Error genérico.";
+            break;
+        case UT_ERR_LECTURA_STDIN:
+            return UT_PREMENSAJE_ERR "Error en la lectura de datos desde stdin.";
+            break;
+        case UT_ERR_ARGS:
+            return UT_PREMENSAJE_ERR "Error en los argumentos.";
+            break;
+        case UT_ERR_COMPROBAR_BUFER_BAJO:
+            return UT_PREMENSAJE_ERR 
+                "Error al comprobar si el búfer bajo nivel está vacío";
+            break;
+        case UT_ERR_LIMPIAR_BUFFER_STDIN:
+            return UT_PREMENSAJE_ERR 
+                "Error al limpiar los caracteres restantes en el búfer stdin.";
+            break;
+        default:
+            return UT_PREMENSAJE_ERR "Error desconocido.";
+            break;
+    }
 }
-
 
 
 /*
@@ -58,14 +57,14 @@ char * strUtilErr_int(int numErr)
 * utilErr.
 *
 * Argumentos:
-* 	Ninguno.
+*   Ninguno.
 *
 * Retorno:
-* 	Cadena char * con el mensaje de error.
+*   Cadena char * con el mensaje de error.
 */
 char * strUtilErr_void(void)
 {
-	return strUtilErr_int(utilErr);
+    return strUtilErr_int(utilErr);
 }
 
 
@@ -74,14 +73,14 @@ char * strUtilErr_void(void)
 * error.  
 * 
 * Argumentos:
-* 	int numErr: número del error a imprimir su mensaje asociado.
+*   int numErr: número del error a imprimir su mensaje asociado.
 *
 * Retorno:
-* 	Ninguno.
+*   Ninguno.
 */
 void printUtilErr_int(int numErr)
 {
-	fprintf(stderr, "%s\n", strUtilErr(numErr));
+    fprintf(stderr, "%s\n", strUtilErr(numErr));
 }
 
 
@@ -90,18 +89,18 @@ void printUtilErr_int(int numErr)
 * error. Al mensaje de salida puede añadirse un mensaje personalizado.
 * 
 * Argumentos:
-* 	int numErr: número del error a imprimir su mensaje asociado.
-* 	char * mensaje: mensaje opcional a imprimir antes del mensaje de error.
+*   int numErr: número del error a imprimir su mensaje asociado.
+*   char * mensaje: mensaje opcional a imprimir antes del mensaje de error.
 *
 * Retorno:
-* 	Ninguno.
+*   Ninguno.
 */
 void printUtilErr_int_pchar(int numErr, char * mensaje)
 {
-	if (mensaje == NULL)
-		printUtilErr_int(numErr);
-	else
-		fprintf(stderr, "%s%s%s\n", mensaje, ": ", strUtilErr(numErr));
+    if (mensaje == NULL)
+        printUtilErr_int(numErr);
+    else
+        fprintf(stderr, "%s%s%s\n", mensaje, ": ", strUtilErr(numErr));
 }
 
 
@@ -110,14 +109,14 @@ void printUtilErr_int_pchar(int numErr, char * mensaje)
 * fijado en la variable interna utilErr.
 * 
 * Argumentos:
-* 	char * mensaje: mensaje opcional a imprimir antes del mensaje de error.
+*   char * mensaje: mensaje opcional a imprimir antes del mensaje de error.
 *
 * Retorno:
-* 	Ninguno.
+*   Ninguno.
 */
 void printUtilErr_pchar(char * mensaje)
 {
-	fprintf(stderr, "%s\n", strUtilErr());
+    fprintf(stderr, "%s\n", strUtilErr());
 }
 
 
@@ -125,14 +124,14 @@ void printUtilErr_pchar(char * mensaje)
 * Establecer el número de error a la variable interna utilErr.
 *
 * Argumentos:
-* 	int numErr: número de error a fijar. 
+*   int numErr: número de error a fijar. 
 *
 * Retorno:
-* 	Ninguno.
+*   Ninguno.
 */
 void setUtilErr(int numErr)
 {
-	utilErr = numErr;
+    utilErr = numErr;
 }
 
 
@@ -140,14 +139,14 @@ void setUtilErr(int numErr)
 * Obtener el número de error a establecido en la variable interna utilErr.
 *
 * Argumentos:
-* 	Ninguno.
+*   Ninguno.
 *
 * Retorno:
-* 	Valor int con número del error establecido en utilErr.
+*   Valor int con número del error establecido en utilErr.
 */
 int getUtilErr(void)
 {
-	return utilErr;
+    return utilErr;
 }
 
 
@@ -155,12 +154,12 @@ int getUtilErr(void)
 * Limpiar el error establecido en la variable interna utilErr.
 *
 * Argumentos:
-* 	Ninguno.	
+*   Ninguno.    
 *
 * Retorno:
-* 	Ninguno.
+*   Ninguno.
 */
 void limpiarUtilErr(void)
 {
-	utilErr = UT_OK;
+    utilErr = UT_OK;
 }
