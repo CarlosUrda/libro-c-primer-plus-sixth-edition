@@ -116,7 +116,7 @@ void printUtilErr_int_pchar(int numErr, char * mensaje)
 */
 void printUtilErr_pchar(char * mensaje)
 {
-    fprintf(stderr, "%s\n", strUtilErr());
+    printUtilErr_int_pchar(utilErr, mensaje);
 }
 
 

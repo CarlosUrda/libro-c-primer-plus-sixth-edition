@@ -12,14 +12,16 @@
 * posible a ser leídos.
 *
 * Argumentos:
-*   char * cadena: lugar donde guardar la cadena leída.
+*   char * cadena: lugar donde guardar la cadena leída. El salto de línea no se
+*       guarda en cadena.
 *   int numMax: valor para determinar el número máximo de caracteres a leer 
 *       desde entrada. El número máximo de caracteres a ser leídos es numMax-1.
 *
 * Retorno:
 *   Devuelve char * con la dirección donde se guarda la cadena leída si no hay 
 *       error. Al final de la cadena leída añade un carácter fin de cadena '\0'.
-*   Null si hay error (en tal caso el contenido de cadena es inconsistente). 
+*   Null si hay error (en tal caso el contenido de cadena es inconsistente). El
+*   error ocurrido se guarda en utilErr; 
 */
 char * getstdin(char * cadena, int numMax)
 {
