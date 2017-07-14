@@ -9,7 +9,8 @@
 #include "utilerr.h"
 
 /* Funciones */
-char * getstdin(char *, int);
+int limpiarStdin(void);
+char * getsStdin(char *, int);
 int fflushin(int);
 
 #endif

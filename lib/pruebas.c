@@ -12,9 +12,9 @@ int main(void)
 	char texto1[TAM_MAX_TEXTO], texto2[TAM_MAX_TEXTO];
 
 	printf("Introduce el texto: ");
-	if (getstdin(texto1, TAM_MAX_TEXTO) == NULL)
+	if (getsStdin(texto1, TAM_MAX_TEXTO) == NULL)
 	{
-		printUtilErr("Error en getstdin()");		
+		printUtilErr("Error en getsStdin()");		
 		return -1;
 	}
 

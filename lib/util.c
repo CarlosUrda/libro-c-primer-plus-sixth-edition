@@ -5,6 +5,39 @@
 
 #include "util.h"
 
+
+/*
+* Limpiar el búfer del flujo stdin.
+* 
+* Argumentos:
+*   Ninguno.
+*
+* Retorno:
+*   UT_OK si el búfer es limpiado correctamente.
+*   UT_ERR si hay algún error. En utilErr queda grabado el código de error.
+*/
+int limpiarStdin(void)
+{
+    char caracter;
+
+    while ((caracter = getchar()) != '\n')
+    {
+        if (caracter != EOF) continue;
+
+        if (feof(stdin) != 0) break;
+            
+        #if __UTILERR_DEBUG__ == 1
+            perror("Error en getchar()");
+        #endif  
+        setUtilErr(UT_ERR_LIMPIAR_BUFFER_STDIN);
+        return UT_ERR;
+    }
+
+    return UT_OK;
+}
+
+
+
 /*
 * Leer una cadena por la entrada estándar (stdin) hasta encontrar un salto de 
 * línea o alcanzar un número máximo de caracteres leídos. Además, limpia el 
@@ -18,12 +51,14 @@
 *       desde entrada. El número máximo de caracteres a ser leídos es numMax-1.
 *
 * Retorno:
-*   Devuelve char * con la dirección donde se guarda la cadena leída si no hay 
-*       error. Al final de la cadena leída añade un carácter fin de cadena '\0'.
-*   Null si hay error (en tal caso el contenido de cadena es inconsistente). El
-*   error ocurrido se guarda en utilErr; 
+*   Devuelve char * con la dirección donde se guarda la cadena leída en caso de
+*       leer la cadena correctamente. Al final de la cadena leída añade un 
+*       carácter fin de cadena '\0'. Si hay error al limpiar el bufer restante, 
+*       en utilErr se guarda el estado (comprobar con hayUtilErr).
+*   Null si hay error en la lectura (en tal caso el contenido de cadena es 
+*       inconsistente). El error ocurrido se guarda en utilErr; 
 */
-char * getstdin(char * cadena, int numMax)
+char * getsStdin(char * cadena, int numMax)
 {
     if (numMax < 1 || cadena == NULL)   
     {
@@ -57,23 +92,12 @@ char * getstdin(char * cadena, int numMax)
 
     cadena[i] = '\0';
 
+    restablecerUtilErr();
+    
     // Limpiar búfer.
-    if (i == numMax-1)
-    {
-        while ((caracter = getchar()) != '\n')
-        {
-            if (caracter != EOF) continue;
-
-            if (feof(stdin) != 0) break;
-            
-            #if __UTILERR_DEBUG__ == 1
-                perror("Error en getchar()");
-            #endif  
-            setUtilErr(UT_ERR_LIMPIAR_BUFFER_STDIN);
-            return NULL;
-        }
-    }
-
+    if (i == numMax-1) 
+        limpiarStdin();
+         
     return cadena;
 }
 

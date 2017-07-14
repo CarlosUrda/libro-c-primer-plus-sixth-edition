@@ -40,6 +40,7 @@ void printUtilErr_int(int);
                       char *: printUtilErr_int_pchar))(__VA_ARGS__)
 void setUtilErr(int);
 int getUtilErr(void);
-void limpiarUtilErr(void);
+void restablecerUtilErr(void);
+_Bool hayUtilErr(void);
 
 #endif

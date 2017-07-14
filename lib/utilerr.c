@@ -159,7 +159,23 @@ int getUtilErr(void)
 * Retorno:
 *   Ninguno.
 */
-void limpiarUtilErr(void)
+void restablecerUtilErr(void)
 {
     utilErr = UT_OK;
+}
+
+
+/*
+* Comprobar si el estado de error contiene algún error.
+*
+* Argumentos:
+*   Ninguno.    
+*
+* Retorno:
+*   Si existe algún error en utilErr devuelve true.
+*   Si utilErr tiene el estado UT_OK devuelve false.
+*/
+_Bool hayUtilErr(void)
+{
+    return utilErr != UT_OK;
 }
