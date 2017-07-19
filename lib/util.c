@@ -7,7 +7,8 @@
 
 
 /*
-* Limpiar el búfer del flujo stdin.
+* Limpiar el búfer del flujo stdin. En caso de no estar vacío queda esperando
+* a introducir caracteres para limpiarlos.
 * 
 * Argumentos:
 *   Ninguno.
