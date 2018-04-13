@@ -10,21 +10,21 @@ void dos(void);
 
 int main(void)
 {
-	printf("Empezando ahora:\n");
-	uno_tres();
-	printf("¡Hecho!\n");
+    printf("Empezando ahora:\n");
+    uno_tres();
+    printf("¡Hecho!\n");
 }
 
 
 void uno_tres(void)
 {
-	printf("uno\n");
-	dos();
-	printf("tres\n");
+    printf("uno\n");
+    dos();
+    printf("tres\n");
 }
 
 
 void dos(void)
 {
-	printf("dos\n");
+    printf("dos\n");
 }

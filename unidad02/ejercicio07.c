@@ -9,19 +9,19 @@ void sonrie(void);
 
 int main(void)
 {
-	sonrie();
-	sonrie();
-	sonrie();
-	printf("\n");
-	sonrie();
-	sonrie();
-	printf("\n");
-	sonrie();
-	printf("\n");
+    sonrie();
+    sonrie();
+    sonrie();
+    printf("\n");
+    sonrie();
+    sonrie();
+    printf("\n");
+    sonrie();
+    printf("\n");
 }
 
 
 void sonrie(void)
 {
-	printf("¡Sonríe!");
+    printf("¡Sonríe!");
 }

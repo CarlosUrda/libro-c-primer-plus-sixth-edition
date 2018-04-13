@@ -6,11 +6,11 @@
 
 int main(void)
 {
-	int annos = 39;
-	int dias = annos * 365;
+    int annos = 39;
+    int dias = annos * 365;
 
-	printf("Años: %d\n", annos);
-	printf("Días: %d\n", dias);
+    printf("Años: %d\n", annos);
+    printf("Días: %d\n", dias);
 
-	return 0;
+    return 0;
 }
