@@ -5,11 +5,11 @@
 #include <stdio.h>
 
 int main(void)
-{							
-	printf("Carlos A. Gómez Urda\n");
-	printf("Carlos A.\nGómez Urda");
-	printf("Carlos A.");
-	printf("Gómez Urda\n");
+{
+    printf("Carlos A. Gómez Urda\n");
+    printf("Carlos A.\nGómez Urda");
+    printf("Carlos A.");
+    printf("Gómez Urda\n");
 
-	return 0;
+    return 0;
 }
