@@ -1,7 +1,7 @@
 *.swo
 tags
 !tags/
-Makefile
+# Makefile
 
 # Prerequisites
 *.d
