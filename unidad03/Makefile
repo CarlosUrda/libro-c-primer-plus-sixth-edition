@@ -1,8 +1,8 @@
-CFLAGS=-c
+CFLAGS=-Wall
 CC=gcc
 
 %.out: %.o
-	$(CC) $^ -o $@
+	$(CC) $(CFLAGS) $^ -o $@
 
 %.o: %.c
-	$(CC) $(CFLAGS) $^ -o $@
+	$(CC) -c $(CFLAGS) $^ -o $@
