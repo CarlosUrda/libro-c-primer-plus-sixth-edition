@@ -6,12 +6,12 @@
 
 int main(void)
 {
-	int codigo;
-	
-	printf("Introduce el código: ");
-	scanf("%d", &codigo);
-	
-	printf("Cáracter asociado: %c\n", codigo);
+    int codigo;
 
-	return 0;
+    printf("Introduce el código: ");
+    scanf("%d", &codigo);
+
+    printf("Cáracter asociado: %c\n", codigo);
+
+    return 0;
 }

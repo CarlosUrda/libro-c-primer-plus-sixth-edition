@@ -6,15 +6,15 @@
 
 int main(void)
 {
-	double decimal;
+    double decimal;
 
-	printf("Introduce un número decimal: ");
-	scanf("%lf", &decimal);
+    printf("Introduce un número decimal: ");
+    scanf("%lf", &decimal);
 
-	printf("Notación punto flotante: %f\n", decimal);
-	printf("Notación exponencial: %e\n", decimal);
-	printf("Notación hexadecimal p: %a\n", decimal);
+    printf("Notación punto flotante: %lf\n", decimal);
+    printf("Notación exponencial: %le\n", decimal);
+    printf("Notación hexadecimal p: %la\n", decimal);
 
-	return 0;
+    return 0;
 }
 

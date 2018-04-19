@@ -6,16 +6,16 @@
 
 int main(void)
 {
-	unsigned short annos;
-	unsigned long long segundos;
+    unsigned short annos;
+    unsigned long long segundos;
 
-	printf("Introduce tu edad: ");
-	scanf("%hu", &annos);
+    printf("Introduce tu edad: ");
+    scanf("%hu", &annos);
 
-	segundos = annos * 3.156e7;
+    segundos = annos * 31560000U;
 
-	printf("Tienes %hu años.\n", annos);
-	printf("Tienes %lld segundos.\n", segundos);
-	
-	return 0;  
+    printf("Tienes %hu años.\n", annos);
+    printf("Tienes %llu segundos.\n", segundos);
+
+    return 0;  
 }
